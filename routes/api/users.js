@@ -32,7 +32,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { email, password, role } = req.body;
+    const { email, password, role = "user" } = req.body;
 
     try {
       const userExists = await User.findOne({ email });
