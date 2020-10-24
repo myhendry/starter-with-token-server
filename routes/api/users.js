@@ -74,7 +74,7 @@ router.get(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     console.log(req.user);
-    res.send(req.user);
+    res.status(201).send({ token: tokenForUser(req.user), user: req.user });
   }
 );
 

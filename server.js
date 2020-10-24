@@ -37,6 +37,7 @@ connectDB();
 // Define Routes
 app.get("/", (_, res) => res.send("API Running"));
 app.use("/api/users", require("./routes/api/users"));
+app.use("/api/todos", require("./routes/api/todos"));
 
 const PORT = process.env.PORT || 5000;
 
